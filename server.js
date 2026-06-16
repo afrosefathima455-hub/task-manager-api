@@ -1,13 +1,19 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const Task = require("./models/Task");
+const authRoutes = require("./routes/authRoutes");
+const authMiddleware = require("./middleware/authMiddleware");
 require("dotenv").config();
 
 console.log("MONGO_URI =", process.env.MONGO_URI);
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
+
+app.use("/api/auth", authRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
@@ -60,6 +66,13 @@ app.delete("/tasks/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
+});
+
+app.get("/profile", authMiddleware, (req, res) => {
+  res.json({
+    message: "Protected route accessed successfully",
+    user: req.user,
+  });
 });
 
 app.listen(PORT, () => {
