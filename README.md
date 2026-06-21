@@ -64,5 +64,13 @@ npm start
 | DELETE | /tasks/:id | Delete a task |
 
 ## Screenshots
-
+<img width="1365" height="767" alt="signup" src="https://github.com/user-attachments/assets/1af5f039-7252-44c2-ae62-f88823158fe9" />
 ![alt text](signup.png) ![alt text](<login page.png>) ![alt text](<task no found.png>) ![alt text](<added task.png>) ![alt text](<edit task.png>) ![alt text](<Edit tasks.png>) ![alt text](<login page (2).png>)
+
+<img width="800" height="423" alt="ReactApp-Profile1-MicrosoftEdge2026-06-2118-43-50-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/ff552fad-a850-4c1b-9f80-f1d9ef47117b" />
+
+
+
+
+
+
