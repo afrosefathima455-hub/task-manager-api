@@ -1,23 +1,28 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import Signup from "./pages/Signup";
+import Tasks from "./pages/Tasks";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <Navbar />
+      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Tasks />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
